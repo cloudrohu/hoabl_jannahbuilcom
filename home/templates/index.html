@@ -27,6 +27,54 @@
 }
 </style>
 
+<style>
+.why-invest-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.why-invest-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.invest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.invest-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.invest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.invest-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.invest-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+</style>
+
 
     <div class="main-container d-flex">
         <main class="left-section">
@@ -119,7 +167,7 @@
                     </div>
                 </div>
                 <!-- xxxxxxxxxxxx Overview section xxxxxxxxxxxx -->
-                <section class="sec1" id="overview">
+                <section class="sec1" id="about_us">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-7 col-lg-7 col-sm-12">
@@ -142,7 +190,33 @@
                         </div>
                     </div>
                 </section>
-                <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
+               <section class="why-invest-section" id="why-invest-section">
+                <h2>🌟 Why Invest in This Land Plot?</h2>
+                <div class="invest-grid">
+
+                    <div class="invest-card">
+                    <h4>✅ Prime Location</h4>
+                    <p>Near schools, hospitals, and shopping centers – sab kuch accessible hai within minutes.</p>
+                    </div>
+
+                    <div class="invest-card">
+                    <h4>💹 High Return on Investment</h4>
+                    <p>Yeh area rapidly develop ho raha hai – ab invest karne se aage chal kar bade gains mil sakte hain.</p>
+                    </div>
+
+                    <div class="invest-card">
+                    <h4>🏞️ Scenic Surroundings</h4>
+                    <p>Green views aur pollution-free environment – ek peaceful lifestyle ke liye perfect spot.</p>
+                    </div>
+
+                    <div class="invest-card">
+                    <h4>🛣️ Excellent Connectivity</h4>
+                    <p>Highways aur metro se connected – city ke kisi bhi kone me easily ja sakte ho.</p>
+                    </div>
+
+                </div>
+                </section>
+                                <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
                 <!-- xxxxxxxxxxxx Highlight section xxxxxxxxxxxx -->
                 <section class="sec2" id="highlights">
 
@@ -339,7 +413,8 @@
                                     <div class="col-lx-6 col-lg-6 col-sm-12 form-data">
                                         <h2 class="text-left ms-4 mt-4 mb-0" style="font-size: 24px;">Schedule a Site Visit</h2>
                                         <div class="form">
-                                            <form name="schedule-site">
+                                            <form name="schedule-site" action="/submit-form/" method="post">
+                                                {% csrf_token %}
                                                 <div class="row">
                                                     <div class="col-lg-12 col-sm-12 forms-input-fields">
                                                         <i class="fa-solid fa-user"></i>
@@ -351,13 +426,18 @@
                                                         <input type="number" name="mobile" id="mobile" class="form-control ms-0 me-0" required placeholder="Mobile*">
                                                         <span class="error">Mobile field is required</span>
                                                     </div>
+                                                         <div class="col-lg-12 col-sm-12 forms-input-fields">
+                                                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        <input type="email" name="email" id="email" class="form-control ms-0 me-0" required placeholder="Email*">
+                                                        <span class="error">Email field is required</span>
+                                                    </div>
                                                     <div>
                                                         <input type="hidden" name="form_name" id="form_name3" class="form-control form_name" value="Contact Site Visit">
                                                         <input type="hidden" id="website_url3" class="website_url" name="website_url">
                                                     </div>
                                                     <div class="form-group acceptance mb-2" style="font-size: 10px;">
                                                         <label class="form-check-label text-start">
-															<input type="checkbox" checked class="form-check-input">
+															<input type="checkbox" checked class="form-check-input" required="">
 															<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
 															<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
 														</label>
