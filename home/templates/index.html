@@ -150,58 +150,21 @@
                         <h1 class="section-title">Mission Blue Zone - Highlights </h1>
 
                         <div class="row">
-
+                            {% for rs in unique_Selling_Proposition %}
                             <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
                                 <div class="highlightData">
                                     <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>Located in Neral, part of fast-growing Mumbai 3.0 corridor </p>
+                                    <p>{{rs.title}} </p>
                                 </div>
                             </div>
                             
                             <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
                                 <div class="highlightData">
                                     <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>Car-lite layout, walkable zones, and sustainable urban planning</p>
+                                    <p>{{rs.title2}}</p>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>80-acre Blue Zone-inspired land development, 2 hrs from Mumbai</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>India’s first wellness-focused land project rooted in global Blue Zone philosophy</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>Features experiential zones with art, waterfalls, fire pits & nature trails</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>Designed by globally acclaimed Enzyme APD (250+ sustainable projects)</p>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>Smart investment zone with ₹4.7L Cr infra boost & 3.6x land appreciation</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>Part of New Generation Land® – secure, transparent, future-ready</p>
-                                </div>
-                            </div>
-
+                            {% endfor %}
                         </div>
                     </div>
                 </section>
