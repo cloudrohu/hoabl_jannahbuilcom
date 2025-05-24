@@ -42,6 +42,56 @@
     </script>
     <!-- End Google Tag Manager -->
 </head>
+ 
+<style>
+  
+#navbarNav {
+  display: none;
+}
+
+#navbarNav.show {
+  display: block;
+}
+@media (max-width: 991px) {
+  #navbarNav {
+    display: none;
+  }
+  #navbarNav.show {
+    display: block;
+  }
+
+  /* Optional: menu items stacked vertically */
+  #navbarNav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+}
+@media (max-width: 991px) {
+  #navbarNav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  #navbarNav.show {
+    max-height: 500px; /* adjust height based on how tall your menu is */
+  }
+
+  /* Optional: vertical stacking */
+  #navbarNav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  #navbarNav ul li {
+    padding: 5px 15px;
+  }
+}
+
+
+</style>
 
 <body class="lodha-yellow">
     <!-- Google Tag Manager (noscript) -->
@@ -56,7 +106,9 @@
             <a class="navbar-brand" href="#" id="head_logo"><img src="{{rs.logo.url}}" style="height: 58px; padding: 3px;" alt="" class="img-fluid d-block mx-auto" width="160"></a>
             <!--this content fetch from JS-->
             <div class="d-flex">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"> <span class="navbar-toggler-icon"></span> </button>
+           <button id="menu-toggle" class="btn btn-outline-dark d-lg-none">☰</button>
+
+
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
@@ -361,13 +413,20 @@
 
     </script>
 
+
 <script>
-  function limitDigits(element, maxDigits) {
-    if (element.value.length > maxDigits) {
-      element.value = element.value.slice(0, maxDigits);
-    }
-  }
+  const toggleBtn = document.getElementById("menu-toggle");
+  const nav = document.getElementById("navbarNav");
+
+  toggleBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
 </script>
+
+
+
+\
+
 </body>
 
 </html>
