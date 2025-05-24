@@ -61,7 +61,6 @@ class Overview(models.Model):
 
 class About_Us(models.Model):
     web_image = models.ImageField(upload_to='aboutimage/')
-    mobile_image = models.ImageField(upload_to='aboutimage/')
     title = models.CharField(max_length=150)
     details= models.TextField(blank=False,max_length=5500)
     
@@ -186,3 +185,13 @@ class Reraaditional(models.Model):
 
 
   
+class Why_Invest(models.Model):
+    title = models.CharField(max_length=350)
+    discripation = models.CharField(max_length=500)
+    
+    
+    def __str__(self):
+        return self.Prime_Location    
+        
+    class Meta:
+        verbose_name_plural='15. Why_Invest'

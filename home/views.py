@@ -39,12 +39,14 @@ def index(request):
     configuration = Configuration.objects.all()
     amenities = Amenities.objects.all()
     gallery = Gallery.objects.all().order_by('-id')[0:4] 
+    WhyInvest = Why_Invest.objects.all()
 
     context={
         'location':location,
         'maharera':maharera,
         'reraaditional':reraaditional,
         'bookingopen':bookingopen,
+        'WhyInvest':WhyInvest,
         'welcome':welcome,
         'header':header,
         'slider':slider,

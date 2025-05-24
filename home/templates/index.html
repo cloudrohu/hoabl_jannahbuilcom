@@ -170,49 +170,37 @@
                 <section class="sec1" id="about_us">
                     <div class="container">
                         <div class="row">
+                            {% for rs in about_us %}
                             <div class="col-xl-7 col-lg-7 col-sm-12">
                                 <div class="overview-data">
-                                    <h1>About Mission Blue Zone Neral</h1>
-                                    <p class="overview-info">Welcome to Mission Blue Zone at Neral – an extraordinary 80-acre sanctuary of life, health, and harmony brought to you by The House of Abhinandan Lodha®. Just two hours from the vibrant heartbeat of Mumbai, this one-of-a-kind
-                                        development takes inspiration from the world’s legendary Blue Zones - places where people don’t just live longer, but live better. Envisioned as India’s first Blue Zone-branded land development, this haven fuses
-                                        nature’s tranquillity with mindful modernity, offering lush green landscapes, soulful architecture, and a lifestyle deeply rooted in joy, connection, and longevity.</p>
-                                    <p>
-                                        <span class="moreText" data-hit="more-overview">Designed by the globally acclaimed Enzyme APD, the township blooms with immersive, sensory-rich experiences - think cascading waterfalls, forest trails, wellness sanctuaries, art corners, and soulful gathering spaces - all harmoniously interwoven into the land’s natural rhythm. As part of the booming Mumbai 3.0 corridor and backed by unprecedented infrastructural expansion, Mission Blue Zone isn’t just a property - it’s a poetic shift towards a more conscious, balanced, and beautiful way of living. An ode to purpose and prosperity, this is where your legacy begins with New Generation Land® - secure, serene, and soulfully yours. </span>
-                                       <span data-target="-overview" class="button moreBtn viewmore" style="color:#1773b5">Read more <i class="fa fa-chevron-down"></i></span>
-                                    </p>
+                                    {% for rs in welcome %}
+                                    <h1>About {{rs.title}}</h1>
+                                    {% endfor %}
+                                    <p class="overview-info">{{rs.title}}     <p>
+                                        <span class="moreText" data-hit="more-overview">{{rs.details}} </p>
                                     <button id="request-brochure-button" type="button" class="custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Brochure"><i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure</button>
                                     <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Brochure"> Express Your Interest</button>
                                 </div>
                             </div>
                             <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
-                                <img src="{%  static '' %}assets/images/about/About.webp" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
+                                <img src="{{rs.web_image.url}}" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </section>
                <section class="why-invest-section" id="why-invest-section">
                 <h2>🌟 Why Invest in This Land Plot?</h2>
+
                 <div class="invest-grid">
 
+                    {% for rs in WhyInvest %}
                     <div class="invest-card">
                     <h4>✅ Prime Location</h4>
                     <p>Near schools, hospitals, and shopping centers – sab kuch accessible hai within minutes.</p>
                     </div>
-
-                    <div class="invest-card">
-                    <h4>💹 High Return on Investment</h4>
-                    <p>Yeh area rapidly develop ho raha hai – ab invest karne se aage chal kar bade gains mil sakte hain.</p>
-                    </div>
-
-                    <div class="invest-card">
-                    <h4>🏞️ Scenic Surroundings</h4>
-                    <p>Green views aur pollution-free environment – ek peaceful lifestyle ke liye perfect spot.</p>
-                    </div>
-
-                    <div class="invest-card">
-                    <h4>🛣️ Excellent Connectivity</h4>
-                    <p>Highways aur metro se connected – city ke kisi bhi kone me easily ja sakte ho.</p>
-                    </div>
+                    {% endfor %}
+                    
 
                 </div>
                 </section>
@@ -221,8 +209,9 @@
                 <section class="sec2" id="highlights">
 
                     <div class="container mx-auto">
-                        <h1 class="section-title">Mission Blue Zone - Highlights </h1>
-
+                        {% for rs in welcome %}
+                        <h1 class="section-title">{{rs.title}} - Highlights </h1>
+                        {% endfor %}
                         <div class="row">
                             {% for rs in unique_Selling_Proposition %}
                             <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
@@ -247,7 +236,9 @@
                     <div class="container sec-pd sec-price">
                         <div class="row gx-md-5">
                             <div class="col-12">
-                                <h1 class="section-title on-rera">Mission Blue Zone - Area & Pricing</h1>
+                                {% for rs in welcome %}
+                                <h1 class="section-title on-rera">{{rs.title}} - Area & Pricing</h1>
+                                {% endfor %}
                                 <div class="">
                                     <table class="table table-borderless table-striped table-pricing text-center">
                                         <thead>
@@ -349,7 +340,7 @@
                     </div>
                 </section>
                 <!-- xxxxxxxxxxxx Gallery section end xxxxxxxxxxxx -->
-                <section class="sec1" id="connectivity">
+                <section class="sec1" id="location">
                     <div class="container" >
                         <h1 class="section-title">Location Advantage</h1>
                        <div class="row mt-2 px-0 mx-0"> <!-- Remove padding -->
