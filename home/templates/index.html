@@ -144,29 +144,35 @@
                     <div class="call-back-section text-center pt-3 pb-3" style="border-bottom: 1px solid #DDD;">
                         <h3 class="mb-0">Pre-Register here for Best Offers</h3>
                     </div>
+
                     <div class="form-section p-4">
-                        <form class=" text-center" name="Pre-Register">
-                            <div class="form-group mb-3">
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name here..." name="name" required>
-                                <span class="error">Name field is required</span>
-                            </div>
-                            <div class="form-group mb-4">
-                                <input type="number" id="mobile" class="form-control" placeholder="Phone Number" name="mobile" required>
-                                <span class="error">Mobile field is required</span>
-                            </div>
-                            <div>
-                                <input type="hidden" name="form_name" id="form_name1" class="form-control form_name" value="Pre-Register Mobile">
-                                <input type="hidden" id="website_url1" class="website_url" name="website_url">
-                            </div>
-                            <div class="form-group acceptance mb-3" style="font-size: 10px;">
-                                <label class="form-check-label text-start">
-										<input type="checkbox" checked class="form-check-input">
-										<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
-											<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
-									</label>
-                            </div>
-                            <button id="mobile-pre-register-button" data-id="Pre-Register Mobile" class="btn preRegisterBtn data-id-btn on-rera" onclick="submitForm(event, 'Pre-Register')">Pre-Register Now</button>
-                        </form>
+                        <form class="text-center" name="Pre-Register-sidemodal" action="/submit-form/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name here..." name="name" required>
+                        <span class="error">Name field is required</span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" id="mobile" class="form-control" required placeholder="Phone Number" name="mobile" oninput="limitDigits(this, 10)">
+                        <span class="error">Mobile field is required</span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="email" id="email" class="form-control" required placeholder="Email" name="email">
+                        <span class="error">Email field is required</span>
+                    </div>
+                    <div>
+                        <input type="hidden" name="form_name" id="form_name2" class="form-control form_name" value="Pre-Register">
+                        <input type="hidden" id="website_url2" class="website_url" name="website_url">
+                    </div>
+                    <div class="form-group acceptance mb-3" style="font-size: 10px;"><label class="form-check-label text-start">
+							<input type="checkbox" checked class="form-check-input" required>
+							<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+							<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
+						</label>
+                    </div>
+                    <button id="right-panel-preregister-button" class="btn preRegisterBtn data-id-btn on-rera" data-id="Pre-Register" onclick="submitForm(event, 'Pre-Register-sidemodal')">Pre-Register Now</button>
+
+                </form>
                     </div>
                 </div>
                 <!-- xxxxxxxxxxxx Overview section xxxxxxxxxxxx -->
@@ -344,7 +350,6 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Request All Amenities</button>
                         <br>
                         <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Express Your Interest</button>
                     </div>
@@ -415,7 +420,6 @@
                         </div>
                         <div class="mt-2">
                             <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn on-rera mx-auto d-block" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Request Location Details</button>
-                            <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Express Your Interest</button>
                         </div>
                     </div>
                 </div>

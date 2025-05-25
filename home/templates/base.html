@@ -90,6 +90,8 @@ display: block;
 
 </style>
 
+
+
 <body class="lodha-yellow">
     
     <!-- xxxxxxxxxxxx Navigator xxxxxxxxxxxx -->
@@ -191,7 +193,7 @@ display: block;
                         <input type="number" id="mobile" class="form-control" required placeholder="Phone Number" name="mobile" oninput="limitDigits(this, 10)">
                         <span class="error">Mobile field is required</span>
                     </div>
-                            <div class="form-group mb-3">
+                    <div class="form-group mb-3">
                         <input type="email" id="email" class="form-control" required placeholder="Email" name="email">
                         <span class="error">Email field is required</span>
                     </div>
@@ -201,7 +203,7 @@ display: block;
                     </div>
                     <div class="form-group acceptance mb-3" style="font-size: 10px;"><label class="form-check-label text-start">
 							<input type="checkbox" checked class="form-check-input" required>
-							<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+							<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
 							<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
 						</label>
                     </div>
