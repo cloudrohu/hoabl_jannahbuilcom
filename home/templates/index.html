@@ -11,7 +11,6 @@
 }
 </style>
 
-
 <style>
 .map-container iframe {
     width: 100% !important;
@@ -74,12 +73,7 @@
   line-height: 1.5;
 }
 </style>
-
-
-
-
-    <div class="main-container d-flex">
-        
+    <div class="main-container d-flex">        
         <main class="left-section">
             <div class="page-wrapper">
                 <!-- xxxxxxxxxxxx Top Section xxxxxxxxxxxx -->
@@ -550,12 +544,12 @@
                 </div>
         </section>
 
-                            <!-- xxxxxxxxxxxx Contact section end xxxxxxxxxxxxxx -->
-                            <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About {% for rs in bookingopen %} {{rs.project_name}}  By {{rs.by}} At {{rs.at}} {% endfor %} Please Share Details.">
-                                <span>
-                                    <img src="{%  static '' %}assets/images/icons/whatsapp.webp" width="32" alt=" ">
-                                </span>
-                            </a>
+        <!-- xxxxxxxxxxxx Contact section end xxxxxxxxxxxxxx -->
+        <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About {% for rs in bookingopen %} {{rs.project_name}}  By {{rs.by}} At {{rs.at}} {% endfor %} Please Share Details.">
+            <span>
+                <img src="{%  static '' %}assets/images/icons/whatsapp.webp" width="32" alt=" ">
+            </span>
+        </a>
 
 {% endfor %}
 {% endblock body %}
