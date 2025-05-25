@@ -344,6 +344,7 @@
                     </div>
                     <div class="text-center">
                         <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Request All Amenities</button>
+                        <br>
                         <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Express Your Interest</button>
                     </div>
                 </div>
@@ -545,7 +546,7 @@
         </section>
 
                             <!-- xxxxxxxxxxxx Contact section end xxxxxxxxxxxxxx -->
-                            <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About The House Of Abhinandan Lodha At Neral, Raigad, Maharashtra. Please Share Details.">
+                            <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About {% for rs in bookingopen %} {{rs.project_name}}  By {{rs.by}} At {{rs.at}} {% endfor %} Please Share Details.">
                                 <span>
                                     <img src="{%  static '' %}assets/images/icons/whatsapp.webp" width="32" alt=" ">
                                 </span>

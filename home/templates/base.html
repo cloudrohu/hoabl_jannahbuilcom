@@ -4,10 +4,13 @@
 {% for rs in header %}
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>{{rs.title}}</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="{{rs.keywords}}">    
+        
     <link rel="icon" href="{%  static '' %}assets/images/favicon/favicon.png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="{{rs.description}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -146,7 +149,7 @@
                 <section>
                     <div class="footer-enquiryBtn d-flex d-sm-none">
                         <a class="monCall data-id-btn" id="mobPhone" href="tel:+91{{rs.cuntact_no}}"><em class="fa fa-phone"></em> Call</a>
-                        <a id="discovery_mobile" target="_blank" class="monCall whatsappBtn data-id-btn on-rera" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About The House Of Abhinandan Lodha At Neral, Raigad, Maharashtra. Please Share Details."><i class="fa fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a id="discovery_mobile" target="_blank" class="monCall whatsappBtn data-id-btn on-rera" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About {% for rs in bookingopen %} {{rs.project_name}}  By {{rs.by}} At {{rs.at}} {% endfor %} Maharashtra. Please Share Details."><i class="fa fa-brands fa-whatsapp"></i> WhatsApp</a>
                         <a class="monCall data-id-btn on-rera" id="mobPhone" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Enquire Now">Enquire Now</a> <a class="monCall data-id-btn non-rera" id="mobPhone"
                             data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Enquire Now">Express Your Interest</a>
                     </div>
@@ -374,26 +377,6 @@
 
     <!-- JavaScript for interactivity -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    function toggleReadMore(btn) {
-      const moreText = btn.previousElementSibling.querySelector('.more-text');
-      if (moreText.style.display === "inline") {
-        moreText.style.display = "none";
-        btn.textContent = "Read More";
-      } else {
-        moreText.style.display = "inline";
-        btn.textContent = "Read Less";
-      }
-    }
-
-    function toggleAccordion(title) {
-      const content = title.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
-    }
-  </script>
-
 
 <script>
   const toggleBtn = document.getElementById("menu-toggle");
@@ -403,6 +386,7 @@
     nav.classList.toggle("show");
   });
 </script>
+
 
 
 
