@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="{{rs.keywords}}">    
         
-    <link rel="icon" href="{{rs.icon.url}}" sizes="16x16">
+    <link rel="icon" href="{{rs.icon.url}}"  sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{rs.description}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -27,23 +27,16 @@
     <link href="{%  static '' %}assets/css/style.css" rel="stylesheet">
     <link href="{%  static '' %}assets/css/theme.css" rel="stylesheet">
     <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5N73BDGZ');
-    </script>
-    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-{{rs.googletagmanager}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-{{rs.googletagmanager}}');
+</script>
+
 </head>
  
 <style>
