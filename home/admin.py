@@ -23,7 +23,7 @@ admin.site.register(Overview,OverviewAdmin)
 
 # Register your models here. 4
 class About_UsAdmin(admin.ModelAdmin):
-    list_display = ['id','web_image','title','details']
+    list_display = ['id','title','details']
 admin.site.register(About_Us, About_UsAdmin)
 
 

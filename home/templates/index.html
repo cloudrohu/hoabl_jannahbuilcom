@@ -12,6 +12,102 @@
 </style>
 
 <style>
+  /* Hide the checkbox */
+  #modalToggle {
+    display: none;
+  }
+
+  /* Section with background and overlay */
+  .virtual-tour-section {
+    position: relative;
+    height: 500px;
+    background-image: url('https://www.jpinfrathepalace.info/mnt/disks/media/uploads/images/1_big_3H25yw4.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    color: white;
+    font-family: Arial, sans-serif;
+    user-select: none;
+  }
+
+  .virtual-tour-overlay {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .virtual-tour-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+  }
+
+  .virtual-tour-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+  }
+
+  .virtual-tour-play-button {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  /* Modal styles */
+  .virtual-tour-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* Show modal when checkbox checked */
+  #modalToggle:checked ~ .virtual-tour-modal {
+    display: flex;
+}
+.virtual-tour-wrapper {
+  max-width: 900px;
+  width: 90%;
+  padding: 20px;
+  box-sizing: border-box;
+  /* margin: auto;  <-- isko hata do */
+  margin-left: 5vw;  /* thoda left shift ho gaya */
+}
+
+  /* Close button */
+  .virtual-tour-close {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+  }
+
+  /* Iframe styles */
+  .virtual-tour-modal iframe {
+    width: 80vw;
+    height: 45vw;
+    max-width: 900px;
+    max-height: 506px;
+    border: none;
+    background: black;
+  }
+</style>
+
+<style>
 .map-container iframe {
     width: 100% !important;
     height: 450px;
@@ -73,6 +169,8 @@
   line-height: 1.5;
 }
 </style>
+
+
     <div class="main-container d-flex">        
         <main class="left-section">
             <div class="page-wrapper">
@@ -173,9 +271,10 @@
                 <section class="sec1" id="about_us">
                     <div class="container">
                         <div class="row">
+                        {% for rs in welcome %}
+
                         <div class="col-xl-7 col-lg-7 col-sm-12">
                             <div class="overview-data">
-                            {% for rs in welcome %}
                                 <h1>Welcome To {{ rs.title }}</h1>
 
                                 <p>{{ rs.details }}</p>
@@ -199,11 +298,9 @@
                                 data-bs-whatever="Enquire Now" data-id="Brochure">
                                 Express Your Interest
                                 </button>
-                            {% endfor %}
                             </div>
                         </div>
 
-                        {% for rs in about_us %}
                         <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
                             <img src="{{ rs.web_image.url }}" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
                         </div>
@@ -476,15 +573,47 @@
                 </div>
             </section>
 
+
+               <section>
+           <div class="virtual-tour-modal">
+  <label for="modalToggle" class="virtual-tour-close" aria-label="Close modal">×</label>
+  <div class="virtual-tour-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      title="Virtual Site Visit Video"
+    ></iframe>
+  </div>
+</div>
+
+            <input type="checkbox" id="modalToggle" />
+
+            <!-- Label to open modal -->
+            <label for="modalToggle" class="virtual-tour-section" role="button" tabindex="0">
+                <div class="virtual-tour-overlay">
+                <div class="virtual-tour-title">VIRTUAL SITE VISIT</div>
+                <div class="virtual-tour-subtitle">JP Infra The Place</div>
+                <div class="virtual-tour-play-button">▶</div>
+                </div>
+            </label>
+
+            <!-- Modal -->
+            <div class="virtual-tour-modal">
+                <label for="modalToggle" class="virtual-tour-close" aria-label="Close modal">×</label>
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" ...></iframe>
+
+            </div>
+            </section>
+
+
             <section class="sec1" id="welcometo">
                 <div class="container">                    
                     <div class="overview-data">
-                    {% for rs in welcome %}
-                    <h1>Welcome To {{ rs.title }}</h1>
+                    {% for rs in about_us %}
+                    <h1>{{ rs.title }}</h1>
                     <p>{{ rs.details }}</p>
-                    <p class="overview-info">             
-                                    
-                    
+                    <p class="overview-info">        
                     {% endfor %}                
                     </div>
                 </div>

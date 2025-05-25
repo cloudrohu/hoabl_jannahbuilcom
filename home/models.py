@@ -60,7 +60,6 @@ class Overview(models.Model):
         verbose_name_plural='3. Overview'
 
 class About_Us(models.Model):
-    web_image = models.ImageField(upload_to='aboutimage/')
     title = models.CharField(max_length=150)
     details= models.TextField(blank=False,max_length=5500)
     
@@ -137,6 +136,7 @@ class Bookingopen(models.Model):
         verbose_name_plural='10. Booking Open'
 
 class Welcometo(models.Model):
+    web_image = models.ImageField(upload_to='aboutimage/')
     title = models.CharField(max_length=150)
     details= models.TextField(blank=False,max_length=5500)
     readmore= models.TextField(blank=False,max_length=5500)
@@ -181,9 +181,6 @@ class Reraaditional(models.Model):
         
     class Meta:
         verbose_name_plural='14. RERA Aditional'
-
-
-
   
 class Why_Invest(models.Model):
     title = models.CharField(max_length=350)
