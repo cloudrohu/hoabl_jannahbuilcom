@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css">
@@ -40,89 +41,117 @@
 </head>
  
 <style>
-  
+
 #navbarNav {
-  display: none;
+display: none;
 }
 
 #navbarNav.show {
-  display: block;
+display: block;
 }
 @media (max-width: 991px) {
-  #navbarNav {
+#navbarNav {
     display: none;
-  }
-  #navbarNav.show {
+}
+#navbarNav.show {
     display: block;
-  }
+}
 
-  /* Optional: menu items stacked vertically */
-  #navbarNav ul {
+/* Optional: menu items stacked vertically */
+#navbarNav ul {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
-  }
+}
 }
 @media (max-width: 991px) {
-  #navbarNav {
+#navbarNav {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
-  }
+}
 
-  #navbarNav.show {
+#navbarNav.show {
     max-height: 500px; /* adjust height based on how tall your menu is */
-  }
+}
 
-  /* Optional: vertical stacking */
-  #navbarNav ul {
+/* Optional: vertical stacking */
+#navbarNav ul {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 0;
-  }
-
-  #navbarNav ul li {
-    padding: 5px 15px;
-  }
 }
-</style>
 
+#navbarNav ul li {
+    padding: 5px 15px;
+}
+}
+
+
+</style>
 
 <body class="lodha-yellow">
     
     <!-- xxxxxxxxxxxx Navigator xxxxxxxxxxxx -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" id="head_logo"><img src="{{rs.logo.url}}" style="height: 58px; padding: 3px;" alt="" class="img-fluid d-block mx-auto" width="160"></a>
-            <!--this content fetch from JS-->
-            <div class="d-flex">
-           <button id="menu-toggle" class="btn btn-outline-dark d-lg-none">☰</button>
+            <nav class="navbar navbar-light bg-white fixed-top shadow-sm" style="height: 80px;">
+            <div class="container-fluid">
 
+                <!-- Logo: Always on the left -->
+                <a class="navbar-brand" href="#">
+               <img src="{{rs.logo.url}} " alt="Logo" style="height: 60px; padding: 1px;" width="160">
 
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"> <a class="nav-link" href="#home">Home</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#about_us"> About us.</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#why-invest-section">Why Invest In Land</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#floor-plan"> Project Lay Out</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#amenities">Amenities</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="#gallery">Gallary</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#pricing">Pricing</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#location">Location</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#contact">Contact_Us</a> </li>
+                </a>
 
-               
+                <!-- Toggler (visible only on mobile) -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
-
-
+                <!-- Desktop Menu (visible only on large screens) -->
+                <div class="d-none d-lg-flex ms-auto align-items-center">
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#about_us">About us</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#why-invest-section">Why Invest In Land</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#floor-plan">Project Lay Out</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#amenities">Amenities</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#location">Location</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact Us</a></li>
                 </ul>
+                </div>
+
+                <!-- Mobile Offcanvas Menu -->
+                <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <img src="{{rs.logo.url}} " alt="Logo" style="height: 60px; padding: 1px;" width="160">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about_us">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-invest-section">Why Invest In Land</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#floor-plan">Project Lay Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                </div>
+
             </div>
-        </div>
-    </nav>
+            </nav>
+
+
     <!-- xxxxxxxxxxxx Navigator End xxxxxxxxxxxx -->
 
-
+<br>
     
     {% block header %} {% endblock %}
     {% block body %}{% endblock body %}
