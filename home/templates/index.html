@@ -170,346 +170,346 @@
                 </div>
                 <!-- xxxxxxxxxxxx Overview section xxxxxxxxxxxx -->
                 <section class="sec1" id="about_us">
-                                <div class="container">
-                                    <div class="row">
-                                    <div class="col-xl-7 col-lg-7 col-sm-12">
-                                        <div class="overview-data">
-                                        {% for rs in welcome %}
-                                            <h1>Welcome To {{ rs.title }}</h1>
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-xl-7 col-lg-7 col-sm-12">
+                            <div class="overview-data">
+                            {% for rs in welcome %}
+                                <h1>Welcome To {{ rs.title }}</h1>
 
-                                            <p>{{ rs.details }}</p>
+                                <p>{{ rs.details }}</p>
 
-                                            <p class="overview-info">             
-                                            <span class="moreText" style="display: none;">{{ rs.readmore }}</span>
-                                            </p>
-                                            
+                                <p class="overview-info">             
+                                <span class="moreText" style="display: none;">{{ rs.readmore }}</span>
+                                </p>
+                                
 
-                                            <button class="readMoreBtn custom-btn" onclick="toggleReadMore(this)">Read More</button>
+                                <button class="readMoreBtn custom-btn" onclick="toggleReadMore(this)">Read More</button>
 
-                                            <br><br>
-                                            <button id="request-brochure-button" type="button" class="custom-btn data-id-btn on-rera"
-                                            data-bs-target="#enquire-modal" data-bs-toggle="modal"
-                                            data-bs-whatever="Enquire Now" data-id="Brochure">
-                                            <i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure
-                                            </button>
+                                <br><br>
+                                <button id="request-brochure-button" type="button" class="custom-btn data-id-btn on-rera"
+                                data-bs-target="#enquire-modal" data-bs-toggle="modal"
+                                data-bs-whatever="Enquire Now" data-id="Brochure">
+                                <i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure
+                                </button>
 
-                                            <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera"
-                                            data-bs-target="#enquire-modal" data-bs-toggle="modal"
-                                            data-bs-whatever="Enquire Now" data-id="Brochure">
-                                            Express Your Interest
-                                            </button>
-                                        {% endfor %}
-                                        </div>
-                                    </div>
+                                <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera"
+                                data-bs-target="#enquire-modal" data-bs-toggle="modal"
+                                data-bs-whatever="Enquire Now" data-id="Brochure">
+                                Express Your Interest
+                                </button>
+                            {% endfor %}
+                            </div>
+                        </div>
 
-                                    {% for rs in about_us %}
-                                    <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
-                                        <img src="{{ rs.web_image.url }}" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
-                                    </div>
-                                    {% endfor %}
-                                    </div>
-                                </div>
+                        {% for rs in about_us %}
+                        <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
+                            <img src="{{ rs.web_image.url }}" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
+                        </div>
+                        {% endfor %}
+                        </div>
+                    </div>
       <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
                 </section>
                 
-               <section class="why-invest-section" id="why-invest-section">
-                    <h2>🌟 Why Invest in This Land Plot?</h2>
+            <section class="why-invest-section" id="why-invest-section">
+                <h2>🌟 Why Invest in This Land Plot?</h2>
 
-                    <div class="invest-grid">
+                <div class="invest-grid">
 
-                        {% for rs in WhyInvest %}
+                    {% for rs in WhyInvest %}
 
-                        <div class="invest-card">
+                    <div class="invest-card">
 
-                            <h4>✅ {{rs.title}}</h4>
-                            <p>{{rs.discripation}}</p>
-
-                        </div>
-
-                        {% endfor %}               
+                        <h4>✅ {{rs.title}}</h4>
+                        <p>{{rs.discripation}}</p>
 
                     </div>
-                </section>
+
+                    {% endfor %}               
+
+                </div>
+            </section>
             
                 <!-- xxxxxxxxxxxx Highlight section xxxxxxxxxxxx -->
 
-                <section class="sec2" id="highlights">
-                    <div class="container mx-auto">
-                        {% for rs in welcome %}
-                        <h1 class="section-title">{{rs.title}} - Highlights </h1>
-                        {% endfor %}
+            <section class="sec2" id="highlights">
+                <div class="container mx-auto">
+                    {% for rs in welcome %}
+                    <h1 class="section-title">{{rs.title}} - Highlights </h1>
+                    {% endfor %}
 
-                        <div class="row">
-                            {% for rs in unique_Selling_Proposition %}
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
-                                    <p>{{rs.title}} </p>
-                                </div>
+                    <div class="row">
+                        {% for rs in unique_Selling_Proposition %}
+                        <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                            <div class="highlightData">
+                                <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                <p>{{rs.title}} </p>
                             </div>
-                            
-                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
-                                <div class="highlightData">
-                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                        </div>
+                        
+                        <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                            <div class="highlightData">
+                                <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                <p>{{rs.title2}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+                
+            <!-- xxxxxxxxxxxx floor plan xxxxxxxxxxxx -->
+            <section class="sec1" id="pricing">
+                <div class="container sec-pd sec-price">
+                    <div class="row gx-md-5">
+                        <div class="col-12">
+                            {% for rs in welcome %}
+                            <h1 class="section-title on-rera">{{rs.title}} - Area & Pricing</h1>
+                            {% endfor %}
+                            <div class="">
+                                <table class="table table-borderless table-striped table-pricing text-center">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Area</th>
+                                            <th scope="col">Price (All-Incl)</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for rs in configuration %}
+                                        <tr>
+                                            <td class="price">{{rs.typology}}</td>
+                                            <td>{{rs.rera_carpet_area}}</td>
+                                            <td class="price"><span style="font-family: sans-serif;">₹</span>{{rs.price}}</td>
+                                            <td> <a href="javascript:void(0);" class="btn text-white my-1 enquiryBtn1 pricing-btn-1 custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Costing Details">Complete Costing Details</a> </td>
+                                            
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- xxxxxxxxxxxx floor plan end xxxxxxxxxxxx -->
+            <section class="sec2" id="floor-plan">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 layout-plan text-center">
+                            <div>
+                                <h1 class="section-title on-rera">Master Plan Layout</h1>
+                            </div>
+                            <img src="{%  static '' %}assets/images/floor-plan/MasterPlan.webp" alt="" class="img-fluid">
+                            <div class="btn_box text-center"> <a href="#" class="btn mt-4 custom-btn data-id-btn on-rera mx-auto" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Master Layout Plan"> Request Master Layout Plan </a>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 layout-plan text-center">
+                            <div>
+                                <h1 class="section-title on-rera">Unit Plan Layout</h1>
+                            </div>
+                            <img src="{%  static '' %}assets/images/floor-plan/UnitPlan.webp" alt="" class="img-fluid">
+                            <div class="btn_box text-center"> <a href="#" class="btn mt-4 custom-btn data-id-btn on-rera mx-auto" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Unit Layout Plan"> Request Unit Layout Plans </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- xxxxxxxxxxxx floor plan end xxxxxxxxxxxx -->
+            <section class="sec1" id="amenities">
+                <div class="container">
+                    <h1 class="section-title on-rera">Luxurious Amenities</h1>
+                    <div class="slick-wrapper">
+                        <div class="inline-flex align-items-center">
+                            <div id="slick1">
+                                {% for rs in amenities %}
+                                <div class="slide-item">
+                                    <img src="{{rs.icone.url}}" style="height: 250px;" alt="">
+                                    <p>{{rs.title}}</p>
+                                </div>
+                                <div class="slide-item">
+                                    <img src="{{rs.icone2.url}}" style="height: 250px;" alt="">
                                     <p>{{rs.title2}}</p>
+                                </div>
+                                {% endfor %}
+                                <!--<div class="slide-item">-->
+                                <!--	<img src="{%  static '' %}assets/images/amenities/Kids play area.webp" alt="">-->
+                                <!--	<p>Kids play area</p>-->
+                                <!--</div>-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Request All Amenities</button>
+                        <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Express Your Interest</button>
+                    </div>
+                </div>
+            </section>
+            <!-- xxxxxxxxxxxx Amenities section end end xxxxxxxxxxxx -->
+            <!-- xxxxxxxxxxxx Gallery section xxxxxxxxxxxx -->
+            <section class="sec2" id="gallery">
+                <div class="container wow fadeInUp">
+                    <!-- data-wow-delay="0.1s" -->
+                    <h1 class="section-title">Project Gallery</h1>
+                    <div class="content-gallery">
+                        <div class="gallery js-gallery">
+                            {% for rs in gallery %}
+                            <div class="gallery-item">
+                                <div class="gallery-img-holder js-gallery-popup">
+                                    <img src="{{rs.web_image.url}}" style="height: 175px;" alt="" class="gallery-img">
                                 </div>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
-                </section>
-                
-                <!-- xxxxxxxxxxxx floor plan xxxxxxxxxxxx -->
-                <section class="sec1" id="pricing">
-                    <div class="container sec-pd sec-price">
-                        <div class="row gx-md-5">
-                            <div class="col-12">
-                                {% for rs in welcome %}
-                                <h1 class="section-title on-rera">{{rs.title}} - Area & Pricing</h1>
-                                {% endfor %}
-                                <div class="">
-                                    <table class="table table-borderless table-striped table-pricing text-center">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Type</th>
-                                                <th scope="col">Area</th>
-                                                <th scope="col">Price (All-Incl)</th>
-                                                <th scope="col"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {% for rs in configuration %}
-                                            <tr>
-                                                <td class="price">{{rs.typology}}</td>
-                                                <td>{{rs.rera_carpet_area}}</td>
-                                                <td class="price"><span style="font-family: sans-serif;">₹</span>{{rs.price}}</td>
-                                                <td> <a href="javascript:void(0);" class="btn text-white my-1 enquiryBtn1 pricing-btn-1 custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Costing Details">Complete Costing Details</a> </td>
-                                                
-                                            </tr>
+                </div>
+            </section>
+            <!-- xxxxxxxxxxxx Gallery section end xxxxxxxxxxxx -->
+            <section class="sec1" id="location">
+                <div class="container" >
+                    <h1 class="section-title">Location Advantage</h1>
+                    <div class="row mt-2 px-0 mx-0"> <!-- Remove padding -->
+                        <div class="map-container w-100">
+                            {{ rs.location|safe }}
+                        </div>
+                    </div>
+                    <div class="row pt-30 mb-3">
+                        <div class="col-xl-12 col-lg-12 col-sm-12 text-dark mt-3 amenities-img">
+                            <!-- location-img-->
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-sm-12 text-dark amenities-info mt-3 ps-2 pe-2">
+                            <div id="exTab1" class="fuild-container">
+                                <nav class="nav nav-pills">
+                                    <a class="nav-link active" data-bs-toggle="pill" href="#Connectivity" role="tab" aria-selected="false">
+                                        <h6 class="subtitle inventory">Connectivity</h6>
+                                    </a>
+                                    <!--<a class="nav-link" data-bs-toggle="pill" href="#education-hub" role="tab" aria-selected="false">-->
+                                    <!--	<h6 class="subtitle inventory">Education Hub</h6>-->
+                                    <!--</a>-->
+                                    <!--<a class="nav-link" data-bs-toggle="pill" href="#HealthCare" role="tab" aria-selected="false">-->
+                                    <!--	<h6 class="subtitle inventory">Healthcare</h6>-->
+                                    <!--</a>-->
+                                    <!--<a class="nav-link " data-bs-toggle="pill" href="#techpark" role="tab">-->
+                                    <!--	<h6 class="subtitle inventory">Tech Parks</h6>-->
+                                    <!--</a>-->
+                                    <!--<a class="nav-link " data-bs-toggle="pill" href="#mall" role="tab">-->
+                                    <!--	<h6 class="subtitle inventory">Malls/ Hotels/ Shopping centers</h6>-->
+                                    <!--</a>-->
+                                </nav>
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane fade active show" id="Connectivity">
+                                        <ul>
+                                            {% for rs in location %}
+                                            <li>{{rs.title}}</li>
                                             {% endfor %}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- xxxxxxxxxxxx floor plan end xxxxxxxxxxxx -->
-                <section class="sec2" id="floor-plan">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 layout-plan text-center">
-                                <div>
-                                    <h1 class="section-title on-rera">Master Plan Layout</h1>
-                                </div>
-                                <img src="{%  static '' %}assets/images/floor-plan/MasterPlan.webp" alt="" class="img-fluid">
-                                <div class="btn_box text-center"> <a href="#" class="btn mt-4 custom-btn data-id-btn on-rera mx-auto" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Master Layout Plan"> Request Master Layout Plan </a>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-6 layout-plan text-center">
-                                <div>
-                                    <h1 class="section-title on-rera">Unit Plan Layout</h1>
-                                </div>
-                                <img src="{%  static '' %}assets/images/floor-plan/UnitPlan.webp" alt="" class="img-fluid">
-                                <div class="btn_box text-center"> <a href="#" class="btn mt-4 custom-btn data-id-btn on-rera mx-auto" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Unit Layout Plan"> Request Unit Layout Plans </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- xxxxxxxxxxxx floor plan end xxxxxxxxxxxx -->
-                <section class="sec1" id="amenities">
-                    <div class="container">
-                        <h1 class="section-title on-rera">Luxurious Amenities</h1>
-                        <div class="slick-wrapper">
-                            <div class="inline-flex align-items-center">
-                                <div id="slick1">
-                                    {% for rs in amenities %}
-                                    <div class="slide-item">
-                                        <img src="{{rs.icone.url}}" style="height: 250px;" alt="">
-                                        <p>{{rs.title}}</p>
-                                    </div>
-                                    <div class="slide-item">
-                                        <img src="{{rs.icone2.url}}" style="height: 250px;" alt="">
-                                        <p>{{rs.title2}}</p>
-                                    </div>
-                                   {% endfor %}
-                                    <!--<div class="slide-item">-->
-                                    <!--	<img src="{%  static '' %}assets/images/amenities/Kids play area.webp" alt="">-->
-                                    <!--	<p>Kids play area</p>-->
-                                    <!--</div>-->
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Request All Amenities</button>
-                            <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Express Your Interest</button>
-                        </div>
-                    </div>
-                </section>
-                <!-- xxxxxxxxxxxx Amenities section end end xxxxxxxxxxxx -->
-                <!-- xxxxxxxxxxxx Gallery section xxxxxxxxxxxx -->
-                <section class="sec2" id="gallery">
-                    <div class="container wow fadeInUp">
-                        <!-- data-wow-delay="0.1s" -->
-                        <h1 class="section-title">Project Gallery</h1>
-                        <div class="content-gallery">
-                            <div class="gallery js-gallery">
-                                {% for rs in gallery %}
-                                <div class="gallery-item">
-                                    <div class="gallery-img-holder js-gallery-popup">
-                                        <img src="{{rs.web_image.url}}" style="height: 175px;" alt="" class="gallery-img">
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- xxxxxxxxxxxx Gallery section end xxxxxxxxxxxx -->
-                <section class="sec1" id="location">
-                    <div class="container" >
-                        <h1 class="section-title">Location Advantage</h1>
-                       <div class="row mt-2 px-0 mx-0"> <!-- Remove padding -->
-                            <div class="map-container w-100">
-                                {{ rs.location|safe }}
-                            </div>
-                        </div>
-                        <div class="row pt-30 mb-3">
-                            <div class="col-xl-12 col-lg-12 col-sm-12 text-dark mt-3 amenities-img">
-                                <!-- location-img-->
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-sm-12 text-dark amenities-info mt-3 ps-2 pe-2">
-                                <div id="exTab1" class="fuild-container">
-                                    <nav class="nav nav-pills">
-                                        <a class="nav-link active" data-bs-toggle="pill" href="#Connectivity" role="tab" aria-selected="false">
-                                            <h6 class="subtitle inventory">Connectivity</h6>
-                                        </a>
-                                        <!--<a class="nav-link" data-bs-toggle="pill" href="#education-hub" role="tab" aria-selected="false">-->
-                                        <!--	<h6 class="subtitle inventory">Education Hub</h6>-->
-                                        <!--</a>-->
-                                        <!--<a class="nav-link" data-bs-toggle="pill" href="#HealthCare" role="tab" aria-selected="false">-->
-                                        <!--	<h6 class="subtitle inventory">Healthcare</h6>-->
-                                        <!--</a>-->
-                                        <!--<a class="nav-link " data-bs-toggle="pill" href="#techpark" role="tab">-->
-                                        <!--	<h6 class="subtitle inventory">Tech Parks</h6>-->
-                                        <!--</a>-->
-                                        <!--<a class="nav-link " data-bs-toggle="pill" href="#mall" role="tab">-->
-                                        <!--	<h6 class="subtitle inventory">Malls/ Hotels/ Shopping centers</h6>-->
-                                        <!--</a>-->
-                                    </nav>
-                                    <div class="tab-content clearfix">
-                                        <div class="tab-pane fade active show" id="Connectivity">
-                                            <ul>
-                                                {% for rs in location %}
-                                                <li>{{rs.title}}</li>
-                                                {% endfor %}
-                                                
-                                            </ul>
-                                        </div>
+                                            
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-2">
-                                <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn on-rera mx-auto d-block" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Request Location Details</button>
-                                <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Express Your Interest</button>
-                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn on-rera mx-auto d-block" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Request Location Details</button>
+                            <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Express Your Interest</button>
                         </div>
                     </div>
-                </section>
-                <!-- xxxxxxxxxxxx Connectivity section end xxxxxxxxxxxx -->
-              
-                <!-- xxxxxxxxxxxx Contact section xxxxxxxxxxxx -->
-                <section id="contact">
-                    <div class="container-fluid full-width"></div>
-                    <div class="container">
-                        <div class="contact-inner">
-                            <div class="container contact-data">
-                                <div class="row">
-                                    <div class="col-lx-6 col-lg-6 col-sm-12 image-carousel1 ps-0 pe-0">
-                                        <img src="{%  static '' %}assets/images/contact/contact.webp" class="img-fluid" />
-                                    </div>
-                                    <div class="col-lx-6 col-lg-6 col-sm-12 form-data">
-                                        <h2 class="text-left ms-4 mt-4 mb-0" style="font-size: 24px;">Schedule a Site Visit</h2>
-                                        <div class="form">
-                                            <form name="schedule-site" action="/submit-form/" method="post">
-                                                {% csrf_token %}
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-sm-12 forms-input-fields">
-                                                        <i class="fa-solid fa-user"></i>
-                                                        <input type="text" name="name" class="form-control ms-0 me-0" required placeholder="Name*">
-                                                        <span class="error">Name field is required</span>
-                                                    </div>
-                                                    <div class="col-lg-12 col-sm-12 forms-input-fields">
-                                                        <i class="fa-solid fa-phone"></i>
-                                                        <input type="number" name="mobile" id="mobile" class="form-control ms-0 me-0" required placeholder="Mobile*">
-                                                        <span class="error">Mobile field is required</span>
-                                                    </div>
-                                                         <div class="col-lg-12 col-sm-12 forms-input-fields">
-                                                      <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                        <input type="email" name="email" id="email" class="form-control ms-0 me-0" required placeholder="Email*">
-                                                        <span class="error">Email field is required</span>
-                                                    </div>
-                                                    <div>
-                                                        <input type="hidden" name="form_name" id="form_name3" class="form-control form_name" value="Contact Site Visit">
-                                                        <input type="hidden" id="website_url3" class="website_url" name="website_url">
-                                                    </div>
-                                                    <div class="form-group acceptance mb-2" style="font-size: 10px;">
-                                                        <label class="form-check-label text-start">
-															<input type="checkbox" checked class="form-check-input" required="">
-															<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
-															<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
-														</label>
-                                                    </div>
-                                                    <button id="schedule-site-visit-button" type="submit" name="submit" class="btn ms-2 custom-btn btn-hover text-white data-id-btn" style="width: auto;" data-id="Contact Site Visit" onclick="submitForm(event, 'schedule-site')">Submit</button>
+                </div>
+            </section>
+            <!-- xxxxxxxxxxxx Connectivity section end xxxxxxxxxxxx -->
+            
+            <!-- xxxxxxxxxxxx Contact section xxxxxxxxxxxx -->
+            <section id="contact">
+                <div class="container-fluid full-width"></div>
+                <div class="container">
+                    <div class="contact-inner">
+                        <div class="container contact-data">
+                            <div class="row">
+                                <div class="col-lx-6 col-lg-6 col-sm-12 image-carousel1 ps-0 pe-0">
+                                    <img src="{%  static '' %}assets/images/contact/contact.webp" class="img-fluid" />
+                                </div>
+                                <div class="col-lx-6 col-lg-6 col-sm-12 form-data">
+                                    <h2 class="text-left ms-4 mt-4 mb-0" style="font-size: 24px;">Schedule a Site Visit</h2>
+                                    <div class="form">
+                                        <form name="schedule-site" action="/submit-form/" method="post">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-12 forms-input-fields">
+                                                    <i class="fa-solid fa-user"></i>
+                                                    <input type="text" name="name" class="form-control ms-0 me-0" required placeholder="Name*">
+                                                    <span class="error">Name field is required</span>
                                                 </div>
-                                            </form>
-                                        </div>
+                                                <div class="col-lg-12 col-sm-12 forms-input-fields">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                    <input type="number" name="mobile" id="mobile" class="form-control ms-0 me-0" required placeholder="Mobile*">
+                                                    <span class="error">Mobile field is required</span>
+                                                </div>
+                                                        <div class="col-lg-12 col-sm-12 forms-input-fields">
+                                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                    <input type="email" name="email" id="email" class="form-control ms-0 me-0" required placeholder="Email*">
+                                                    <span class="error">Email field is required</span>
+                                                </div>
+                                                <div>
+                                                    <input type="hidden" name="form_name" id="form_name3" class="form-control form_name" value="Contact Site Visit">
+                                                    <input type="hidden" id="website_url3" class="website_url" name="website_url">
+                                                </div>
+                                                <div class="form-group acceptance mb-2" style="font-size: 10px;">
+                                                    <label class="form-check-label text-start">
+                                                        <input type="checkbox" checked class="form-check-input" required="">
+                                                        <span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+                                                        <span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
+                                                    </label>
+                                                </div>
+                                                <button id="schedule-site-visit-button" type="submit" name="submit" class="btn ms-2 custom-btn btn-hover text-white data-id-btn" style="width: auto;" data-id="Contact Site Visit" onclick="submitForm(event, 'schedule-site')">Submit</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="col-lx-6 col-lg-6 col-sm-12 ps-0 pe-0 image-carousel m-0">
-                                        <img src="{%  static '' %}assets/images/contact/contact.webp" class="img-fluid" />
-                                    </div>
+                                </div>
+                                <div class="col-lx-6 col-lg-6 col-sm-12 ps-0 pe-0 image-carousel m-0">
+                                    <img src="{%  static '' %}assets/images/contact/contact.webp" class="img-fluid" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section class="sec1" id="welcometo">
-                    <div class="container">                    
-                        <div class="overview-data">
-                        {% for rs in welcome %}
-                        <h1>Welcome To {{ rs.title }}</h1>
-                        <p>{{ rs.details }}</p>
-                        <p class="overview-info">             
-                                      
-                        
-                        {% endfor %}                
-                        </div>
-                    </div>
+            <section class="sec1" id="welcometo">
+                <div class="container">                    
+                    <div class="overview-data">
+                    {% for rs in welcome %}
+                    <h1>Welcome To {{ rs.title }}</h1>
+                    <p>{{ rs.details }}</p>
+                    <p class="overview-info">             
+                                    
                     
-                    <div class="container" style="padding: 30px;">                    
-                  <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
-        <div class="row">
-            {% for rs in maharera %}
-            <div class="col-md-3">
-                <div class="rera-box">
-                    <div class="rera-img">
-                        <img src="{{rs.qr_image.url}}" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
+                    {% endfor %}                
                     </div>
-                    <div class="rera-details">
-                        <p>{{rs.title}} - <b>{{rs.maharera_no}}</b></p>
-                    </div>
+                </div>
+                
+                <div class="container" style="padding: 30px;">                    
+                <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
+    <div class="row">
+        {% for rs in maharera %}
+        <div class="col-md-3">
+            <div class="rera-box">
+                <div class="rera-img">
+                    <img src="{{rs.qr_image.url}}" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
+                </div>
+                <div class="rera-details">
+                    <p>{{rs.title}} - <b>{{rs.maharera_no}}</b></p>
                 </div>
             </div>
         </div>
-        <span class="pro-rera text-center-mob">{{rs.details}}</span>
-        <p></p>
-        {% endfor %}
-                    </div>
-                </section>
-      <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
+    </div>
+    <span class="pro-rera text-center-mob">{{rs.details}}</span>
+    <p></p>
+    {% endfor %}
+                </div>
+            </section>
+            <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
 
         <section style="text-align:justify;background:#f7f7f7 !important;" class="section shadow-sm lazyload" id="developer">
             <small>
@@ -518,15 +518,21 @@
             .newlist li:before { content: '✓'; font-weight: 800;  margin-right: 10px;  font-size: 13px;  margin-left: -22px; }
             </style>
             <div class="container" style="padding-left: 50px;">
-                <ul class="newlist"style="padding-top: 20px;">
-                    <li> Project Registered under Government of India RERA Act 2016</li>
-                    <li> Government RERA Authorised Advertiser’s: Home Bazaar Services Pvt Ltd, Registration No A52000000045, CIN U45400MH2013PTC242930.</li>
-                    <li> MAHA RERA Project Registration No.: P51800076673</li>
-                    <li><b>Site Address:</b> Rustomjee Ocean Vista: JP Rd, Aram Nagar, Versova, Andheri West, Mumbai, Maharashtra 400047.</li>
-                    <li><b>Contact Us:</b> Corporate Office: Rustomjee Group: Keystone Realtors Limited. 702 Natraj, M.V. Road Junction, Western Express Highway, Andheri(E) Mumbai - 400069, Maharashtra, India.</li>
+                {% for rs in reraaditional %}
+                <ul class="newlist" style="padding-top: 20px;>
+                    <li>{{rs.project_registered}} </li>
+                    <li>{{rs.Government_RERA_Authorised_Advertiser}}.</li>
+                    <li>{{rs.RERA_Project_Registration_No}}</li>
+                    <li><b>Site Address:</b> {{rs.Site_Address}}</li>
+                    <li><b>Contact Us:</b>{{rs.Contact_Us}}</li>
+                    
                 </ul>
-            
-            
+                
+                <b>Disclaimer:</b>
+                {{rs.Disclaimer}}
+                <hr>
+                {% endfor %}
+                
             </div>
 	
                 <div style="padding: 20px;">
