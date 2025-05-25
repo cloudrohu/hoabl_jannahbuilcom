@@ -191,7 +191,7 @@ class Why_Invest(models.Model):
     
     
     def __str__(self):
-        return self.Prime_Location    
+        return self.title    
         
     class Meta:
         verbose_name_plural='15. Why_Invest'
