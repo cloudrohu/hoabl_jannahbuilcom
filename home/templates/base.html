@@ -138,52 +138,11 @@
 
 
 
-                
-                <!-- xxxxxxxxxxxx Footer xxxxxxxxxxxx -->
-                <footer class="sec3">
-                    <div class="container on-rera">
-                        <div class="foot_logo mb-3"></div>
-                        <!--this content fetch from JS-->
-                        <div id="foot_rera_qr" class="pt-2"></div>
-                        <!--this content fetch from JS-->
-                        <div class="elementor-widget-container text-center">
-                            <p>
-                                This project is RERA registered.&nbsp; <br><a style="text-decoration:none;color:#000;font-size:12px;">
-									<span id="Agent_Rera"></span> 
-									<!--this content fetch from JS--><br><span id="Project_Rera"></span> 
-									<!--this content fetch from JS-->
-								</a>
-                            </p>
-                        </div>
-                        <p id="disclaimer"> The content presented on this website is solely for informational purposes and does not constitute a service offer. Prices mentioned here are subject to change without prior notification, and the availability of the listed properties
-                            is not assured. Images showcased are illustrative and may not precisely represent the actual properties. Kindly be advised that this website operates as an authorized marketing partner (PropSolutions4U Pvt. Ltd). For necessary
-                            processing, we may share data with Real Estate Regulatory Authority (RERA) registered brokers/companies. Additionally, updates and information may be sent to the registered mobile number or email ID. All rights reserved. This
-                            website's content, design, and data are protected by copyright and other intellectual property rights. Unauthorized use or reproduction of the content may be subject to legal repercussions. For precise and current information
-                            on services, pricing, availability, or any other details, we recommend you contact us directly via the provided contact information on this website. We appreciate your visit. </p>
-                        <p class="text-center mb-0 pb-2">
-                            © <a href="Privacy-Policy.html" target="_blank" style="color:#878787;text-align:center;text-decoration:none;"> Privacy Policy</a> | <a href="terms-conditions.html" target="_blank" style="color:#878787;text-align:center;text-decoration:none;">Terms &amp; Conditions</a><br></p>
-                    </div>
-                    <div class="container non-rera">
-                        <div class="foot_logo mb-3"></div>
-                        <p id="disclaimer">
-                            The content on this website is for informational purposes only and is not intended as an offer for services or sale. The project mentioned has not yet received RERA clearance but is currently in the process of registration with the State Name Real Estate
-                            Regulatory Authority. The project name used here is for branding and interest-generation purposes only and is not intended as the final project name. No sales or purchases are being facilitated for this pending project.
-                            <span
-                                id="additional-content" class="moredisclaimerText" data-hit="more-overview"> This site is managed by Prop Solutions4U Pvt. Ltd., a RERA authorized real estate agent. The images displayed are for illustrative purposes and may not represent the actual properties. Additionally, your data may be shared
-                                with RERA-registered Developers to gauge interest and for polling purposes. Updates and information may be sent to the contact details provided by you based on your expressed interest. Copyright and other intellectual property
-                                laws protect the content, design, and information on this website. Unauthorized use or reproduction of the content may result in legal action. Thank you for your visit. RERA - Coming Soon </span>
-                                <span data-target="-overview" class="moredisclaimerBtn">Read More <i class="fa fa-chevron-down"></i></span>
-                        </p>
-                        <p class="text-center mb-0 pb-2">
-                            © <a href="Privacy-Policy.html" target="_blank" style="color:#878787;text-align:center;text-decoration:none;"> Privacy Policy</a> | <a href="terms-conditions.html" target="_blank" style="color:#878787;text-align:center;text-decoration:none;">Terms &amp; Conditions</a><br></p>
-                    </div>
-                </footer>
-                <!-- xxxxxxxxxxxx Footer end xxxxxxxxxxxx -->
-                <section id="footer-links">
-                    <div class="container text-center">
-                        <p>All Rights Reserved. © 2025 <a href="https://cloudrohu.com/" target="_blank" class="on-rera">Cloud Rohu</a></p>
-                    </div>
-                </section>
+
+
+  </div>
+</section>
+
                 <section>
                     <div class="footer-enquiryBtn d-flex d-sm-none">
                         <a class="monCall data-id-btn" id="mobPhone" href="tel:+91{{rs.cuntact_no}}"><em class="fa fa-phone"></em> Call</a>
@@ -413,6 +372,28 @@
 
     </script>
 
+    <!-- JavaScript for interactivity -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleReadMore(btn) {
+      const moreText = btn.previousElementSibling.querySelector('.more-text');
+      if (moreText.style.display === "inline") {
+        moreText.style.display = "none";
+        btn.textContent = "Read More";
+      } else {
+        moreText.style.display = "inline";
+        btn.textContent = "Read Less";
+      }
+    }
+
+    function toggleAccordion(title) {
+      const content = title.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
 
 <script>
   const toggleBtn = document.getElementById("menu-toggle");
@@ -425,8 +406,31 @@
 
 
 
-\
+<!-- Add this script -->
+<script>
+  function toggleReadMore(btn) {
+    const moreText = btn.previousElementSibling.querySelector(".moreText");
+    if (moreText.style.display === "inline" || moreText.style.display === "") {
+      moreText.style.display = "none";
+      btn.textContent = "Read More";
+    } else {
+      moreText.style.display = "inline";
+      btn.textContent = "Read Less";
+    }
+  }
+</script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      var myModal = new bootstrap.Modal(document.getElementById('enquire-modal'));
+      myModal.show();
+    }, 2000); // 2000ms = 2 seconds
+  });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -76,6 +76,8 @@
 </style>
 
 
+
+
     <div class="main-container d-flex">
         <main class="left-section">
             <div class="page-wrapper">
@@ -158,8 +160,8 @@
                             <div class="form-group acceptance mb-3" style="font-size: 10px;">
                                 <label class="form-check-label text-start">
 										<input type="checkbox" checked class="form-check-input">
-										<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
-											<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
+										<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+											<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
 									</label>
                             </div>
                             <button id="mobile-pre-register-button" data-id="Pre-Register Mobile" class="btn preRegisterBtn data-id-btn on-rera" onclick="submitForm(event, 'Pre-Register')">Pre-Register Now</button>
@@ -168,46 +170,67 @@
                 </div>
                 <!-- xxxxxxxxxxxx Overview section xxxxxxxxxxxx -->
                 <section class="sec1" id="about_us">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-7 col-lg-7 col-sm-12">
-                                <div class="overview-data">
-                                    {% for rs in welcome %}
-                                    <h1>About {{rs.title}}</h1>
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-xl-7 col-lg-7 col-sm-12">
+                                        <div class="overview-data">
+                                        {% for rs in welcome %}
+                                            <h1>Welcome To {{ rs.title }}</h1>
 
-                                    <p class="overview-info">{{rs.details}}     <p>
-                                        <span class="moreText" data-hit="more-overview">{{rs.readmore}} </p>
-                                    <button id="request-brochure-button" type="button" class="custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Brochure"><i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure</button>
-                                    <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Brochure"> Express Your Interest</button>
+                                            <p>{{ rs.details }}</p>
+
+                                            <p class="overview-info">             
+                                            <span class="moreText" style="display: none;">{{ rs.readmore }}</span>
+                                            </p>
+                                            
+
+                                            <button class="readMoreBtn custom-btn" onclick="toggleReadMore(this)">Read More</button>
+
+                                            <br><br>
+                                            <button id="request-brochure-button" type="button" class="custom-btn data-id-btn on-rera"
+                                            data-bs-target="#enquire-modal" data-bs-toggle="modal"
+                                            data-bs-whatever="Enquire Now" data-id="Brochure">
+                                            <i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure
+                                            </button>
+
+                                            <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera"
+                                            data-bs-target="#enquire-modal" data-bs-toggle="modal"
+                                            data-bs-whatever="Enquire Now" data-id="Brochure">
+                                            Express Your Interest
+                                            </button>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    {% for rs in about_us %}
+                                    <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
+                                        <img src="{{ rs.web_image.url }}" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
+                                    </div>
+                                    {% endfor %}
+                                    </div>
                                 </div>
-                            </div>
-                            {% endfor %}
-                            
-                            {% for rs in about_us %}
-
-                            <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
-                                <img src="{{rs.web_image.url}}" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+      <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
                 </section>
+                
                <section class="why-invest-section" id="why-invest-section">
-                <h2>🌟 Why Invest in This Land Plot?</h2>
+                    <h2>🌟 Why Invest in This Land Plot?</h2>
 
-                <div class="invest-grid">
+                    <div class="invest-grid">
 
-                    {% for rs in WhyInvest %}
-                    <div class="invest-card">
-                    <h4>✅ {{rs.title}}</h4>
-                    <p>{{rs.discripation}}</p>
+                        {% for rs in WhyInvest %}
+
+                        <div class="invest-card">
+
+                            <h4>✅ {{rs.title}}</h4>
+                            <p>{{rs.discripation}}</p>
+
+                        </div>
+
+                        {% endfor %}               
+
                     </div>
-                    {% endfor %}
-                    
-
-                </div>
                 </section>
-                <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
+            
                 <!-- xxxxxxxxxxxx Highlight section xxxxxxxxxxxx -->
 
                 <section class="sec2" id="highlights">
@@ -215,6 +238,7 @@
                         {% for rs in welcome %}
                         <h1 class="section-title">{{rs.title}} - Highlights </h1>
                         {% endfor %}
+
                         <div class="row">
                             {% for rs in unique_Selling_Proposition %}
                             <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
@@ -395,6 +419,7 @@
                     </div>
                 </section>
                 <!-- xxxxxxxxxxxx Connectivity section end xxxxxxxxxxxx -->
+              
                 <!-- xxxxxxxxxxxx Contact section xxxxxxxxxxxx -->
                 <section id="contact">
                     <div class="container-fluid full-width"></div>
@@ -433,8 +458,8 @@
                                                     <div class="form-group acceptance mb-2" style="font-size: 10px;">
                                                         <label class="form-check-label text-start">
 															<input type="checkbox" checked class="form-check-input" required="">
-															<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
-															<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
+															<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+															<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="{% url "privacy-policy" %}" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
 														</label>
                                                     </div>
                                                     <button id="schedule-site-visit-button" type="submit" name="submit" class="btn ms-2 custom-btn btn-hover text-white data-id-btn" style="width: auto;" data-id="Contact Site Visit" onclick="submitForm(event, 'schedule-site')">Submit</button>
@@ -450,13 +475,74 @@
                         </div>
                     </div>
                 </section>
-                <!-- xxxxxxxxxxxx Contact section end xxxxxxxxxxxxxx -->
-                <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About The House Of Abhinandan Lodha At Neral, Raigad, Maharashtra. Please Share Details.">
-					<span>
-						<img src="{%  static '' %}assets/images/icons/whatsapp.webp" width="32" alt=" ">
-					</span>
-				</a>
+
+                <section class="sec1" id="welcometo">
+                    <div class="container">                    
+                        <div class="overview-data">
+                        {% for rs in welcome %}
+                        <h1>Welcome To {{ rs.title }}</h1>
+                        <p>{{ rs.details }}</p>
+                        <p class="overview-info">             
+                                      
+                        
+                        {% endfor %}                
+                        </div>
+                    </div>
+                    
+                    <div class="container" style="padding: 30px;">                    
+                  <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
+        <div class="row">
+            {% for rs in maharera %}
+            <div class="col-md-3">
+                <div class="rera-box">
+                    <div class="rera-img">
+                        <img src="{{rs.qr_image.url}}" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
+                    </div>
+                    <div class="rera-details">
+                        <p>{{rs.title}} - <b>{{rs.maharera_no}}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="pro-rera text-center-mob">{{rs.details}}</span>
+        <p></p>
+        {% endfor %}
+                    </div>
+                </section>
+      <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
+
+        <section style="text-align:justify;background:#f7f7f7 !important;" class="section shadow-sm lazyload" id="developer">
+            <small>
+            <style>
+            .newlist { list-style: none; line-height: 25px; padding-left: 22px; }
+            .newlist li:before { content: '✓'; font-weight: 800;  margin-right: 10px;  font-size: 13px;  margin-left: -22px; }
+            </style>
+            <div class="container" style="padding-left: 50px;">
+                <ul class="newlist"style="padding-top: 20px;">
+                    <li> Project Registered under Government of India RERA Act 2016</li>
+                    <li> Government RERA Authorised Advertiser’s: Home Bazaar Services Pvt Ltd, Registration No A52000000045, CIN U45400MH2013PTC242930.</li>
+                    <li> MAHA RERA Project Registration No.: P51800076673</li>
+                    <li><b>Site Address:</b> Rustomjee Ocean Vista: JP Rd, Aram Nagar, Versova, Andheri West, Mumbai, Maharashtra 400047.</li>
+                    <li><b>Contact Us:</b> Corporate Office: Rustomjee Group: Keystone Realtors Limited. 702 Natraj, M.V. Road Junction, Western Express Highway, Andheri(E) Mumbai - 400069, Maharashtra, India.</li>
+                </ul>
+            
+            
+            </div>
+	
+                <div style="padding: 20px;">
+                    <b>Disclaimer:</b>
+                    We are an authorised marketing partner for this project. Provided content is given by respective owners and this website and content is for information purpose only and it does not constitute any offer to avail for any services. Prices mentioned are subject to change without prior notice and properties mentioned are subject to availability. You can expect a call, SMS or emails on details registered with us.<hr>
+                    <p style="text-align:center;">Copyright &copy; 2025 | <a aria-label="About Terms & Conditions" href="terms-conditions.php">Terms & Conditions</a> | <a aria-label="About Privacy Policy" href="{% url "privacy-policy" %}">Privacy Policy</a> | <a aria-label="About Cookies Policy" href="cookies-policy.php">Cookies Policy</a> </p>
+                    </small>
+                </div>
+        </section>
+
+                            <!-- xxxxxxxxxxxx Contact section end xxxxxxxxxxxxxx -->
+                            <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About The House Of Abhinandan Lodha At Neral, Raigad, Maharashtra. Please Share Details.">
+                                <span>
+                                    <img src="{%  static '' %}assets/images/icons/whatsapp.webp" width="32" alt=" ">
+                                </span>
+                            </a>
 
 {% endfor %}
-
 {% endblock body %}
