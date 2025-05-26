@@ -12,99 +12,133 @@
 </style>
 
 <style>
-  /* Hide the checkbox */
-  #modalToggle {
-    display: none;
-  }
-
-  /* Section with background and overlay */
   .virtual-tour-section {
-    position: relative;
-    height: 500px;
-    background-image: url('https://www.jpinfrathepalace.info/mnt/disks/media/uploads/images/1_big_3H25yw4.png');
+    width: 100%;
+
     background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: left;
-    align-items: left;
+    
+    background-repeat: no-repeat;
+    padding: 120px 20px;
+    text-align: center;
     color: white;
-    font-family: Arial, sans-serif;
-    user-select: none;
   }
 
   .virtual-tour-overlay {
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 60px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 800px;
+    margin: auto;
   }
 
   .virtual-tour-title {
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: bold;
-    margin-bottom: 0.2em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px black;
   }
 
   .virtual-tour-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 1em;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px black;
   }
 
   .virtual-tour-play-button {
-    font-size: 4rem;
-    line-height: 1;
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+    color: black;
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    transition: transform 0.2s;
   }
 
-  /* Modal styles */
+  .virtual-tour-play-button:hover {
+    transform: scale(1.1);
+  }
+
   .virtual-tour-modal {
     display: none;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
     z-index: 9999;
   }
 
-  /* Show modal when checkbox checked */
-  #modalToggle:checked ~ .virtual-tour-modal {
-    display: flex;
-}
-.virtual-tour-wrapper {
-  max-width: 900px;
-  width: 90%;
-  padding: 20px;
-  box-sizing: border-box;
-  /* margin: auto;  <-- isko hata do */
-  margin-left: 5vw;  /* thoda left shift ho gaya */
-}
+  .virtual-tour-modal iframe {
+    width: 80%;
+    height: 450px;
+    margin: 5% auto;
+    display: block;
+    border: none;
+  }
 
-  /* Close button */
   .virtual-tour-close {
     position: absolute;
     top: 20px;
-    left: 30px;
-    font-size: 3rem;
+    left: 30px; /* ⬅️ LEFT SIDE */
+    font-size: 35px;
     color: white;
     cursor: pointer;
-    user-select: none;
-    font-weight: bold;
+    z-index: 10000;
   }
 
-  /* Iframe styles */
-  .virtual-tour-modal iframe {
-    width: 80vw;
-    height: 45vw;
-    max-width: 900px;
-    max-height: 506px;
-    border: none;
-    background: black;
+  @media (max-width: 768px) {
+    .virtual-tour-title {
+      font-size: 30px;
+    }
+
+    .virtual-tour-subtitle {
+      font-size: 18px;
+    }
+
+    .virtual-tour-play-button {
+      width: 65px;
+      height: 65px;
+      font-size: 30px;
+      line-height: 65px;
+    }
+
+    .virtual-tour-modal iframe {
+      width: 95%;
+      height: 300px;
+    }
   }
+  .virtual-tour-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+}
+
+.background-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* image ko poora container cover karwana */
+  z-index: 0;
+  pointer-events: none; /* taaki click us image pe na ho */
+}
+
+.virtual-tour-overlay {
+  position: relative;
+  z-index: 1; /* overlay image ke upar dikhe */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 60px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 800px;
+  margin: auto;
+}
+
 </style>
 
 <style>
@@ -293,7 +327,11 @@
                                 <i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure
                                 </button>
 
-                            
+                                <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera"
+                                data-bs-target="#enquire-modal" data-bs-toggle="modal"
+                                data-bs-whatever="Enquire Now" data-id="Brochure">
+                                Express Your Interest
+                                </button>
                             </div>
                         </div>
 
@@ -568,39 +606,19 @@
                     </div>
                 </div>
             </section>
-
-
-               <section>
-           <div class="virtual-tour-modal">
-  <label for="modalToggle" class="virtual-tour-close" aria-label="Close modal">×</label>
-  <div class="virtual-tour-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      title="Virtual Site Visit Video"
-    ></iframe>
-  </div>
-</div>
-
-            <input type="checkbox" id="modalToggle" />
-
-            <!-- Label to open modal -->
-            <label for="modalToggle" class="virtual-tour-section" role="button" tabindex="0">
-                <div class="virtual-tour-overlay">
-                <div class="virtual-tour-title">VIRTUAL SITE VISIT</div>
-                <div class="virtual-tour-subtitle">JP Infra The Place</div>
-                <div class="virtual-tour-play-button">▶</div>
+            <section>
+                <div class="virtual-tour-section" style="height: 500px;" >
+                    <img class="background-img" src="{{rs.virtual_site_visit.url}}" alt="Virtual Tour Background" />
+                    <div class="virtual-tour-overlay">
+                        <div class="virtual-tour-title">VIRTUAL SITE VISIT</div>
+                        {% for rs in welcome %}
+                        <div class="virtual-tour-subtitle"><h1>{{rs.title}}<h2></div>
+                        {% endfor %}
+                        <div class="virtual-tour-play-button" data-bs-toggle="modal" data-bs-target="#enquire-modal">▶</div>
+                    </div>
                 </div>
-            </label>
-
-            <!-- Modal -->
-            <div class="virtual-tour-modal">
-                <label for="modalToggle" class="virtual-tour-close" aria-label="Close modal">×</label>
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" ...></iframe>
-
-            </div>
-            </section>
+             </section>
+         
 
 
             <section class="sec1" id="welcometo">

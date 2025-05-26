@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'mptt',
     'ckeditor',
     'ckeditor_uploader',
+    'embed_video',
+
     
 ]
 
